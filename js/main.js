@@ -1,11 +1,21 @@
 let navBar = $('#nav');
 let overLay = $(".overLay");
+let navItems = $('#nav .nav-item')
 let slider = $("#slider");
 let popup = $('.popup');
 let close = $('.close');
 let centersItem = $('.services .nav-item');
 let centers = $('.services .houses .center')
 // Navbar
+
+navItems.click(function(){
+    navItems.children('.nav-link').removeClass('active')
+    $(this).children('.nav-link').addClass('active')
+
+    // if($(this).children('.nav-link').prop('class') != 'active'){
+    //     console.log('none')
+    // }
+})
 changeNaveStyle(0)
 $(window).on("scroll resize" , _=> changeNaveStyle())
 function changeNaveStyle(){
