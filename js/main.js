@@ -3,6 +3,8 @@ let overLay = $(".overLay");
 let slider = $("#slider");
 let popup = $('.popup');
 let close = $('.close');
+let centersItem = $('.services .nav-item');
+let centers = $('.services .houses .center')
 // Navbar
 changeNaveStyle(0)
 $(window).on("scroll resize" , _=> changeNaveStyle())
@@ -34,4 +36,15 @@ $(".gallary .box").click((function(){
 close.click(function(){
     overLay.css('display' , 'none')
     popup.hide(300 , _=>$('body').css('overflow' , 'auto'))
+})
+
+//centers
+centersItem.click(function(){
+    let centerShow = $($(this).data('target'));
+    if(centerShow.css('display') === 'none'){
+        centersItem.removeClass("active")
+        $(this).addClass('active')
+        centers.css('display' , 'none')
+        centerShow.fadeIn(800)
+    }
 })

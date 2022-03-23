@@ -72,6 +72,7 @@ nav.navbar{
 .services ul{
     color: black;
     padding: 0;
+    user-select: none;
 }
 @media(max-width:991px){
     .services ul{
@@ -101,12 +102,16 @@ nav.navbar{
 .services ul li:hover{
     color: rgba(0, 0, 0, .5);
 }
+.services .houses div.center:not(:first-of-type){
+    display:none ;
+}
+
 /* End Services */
 
 /* Start gallary */
 .gallary .box{
     position: relative;
-    
+    user-select: none;
 }
 @media(min-width:768px){
     .gallary .box::before{
