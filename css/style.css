@@ -28,6 +28,7 @@ body{
 nav.navbar{
     transition:padding .3s;
     z-index: 3;
+    padding: 0;
 }
 .navbar .navbar-brand img{
     height: 62px;
