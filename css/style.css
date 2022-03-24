@@ -29,6 +29,9 @@ nav.navbar{
     transition:padding .3s;
     z-index: 3;
 }
+.navbar .navbar-brand img{
+    height: 62px;
+} 
 /* End Navbar */
 /* Start Slider */
 .slider{
@@ -45,6 +48,9 @@ nav.navbar{
 }
 .slider p{
     font-family: 'Noto Kufi Arabic', sans-serif;
+}
+.slider img{
+    max-height:300px ;
 }
 @keyframes slidBg{
     0%{
