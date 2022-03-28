@@ -22,6 +22,19 @@ body{
 .smt{ /*section margin top*/
     margin-top: 6rem;
 }
+
+@media(max-width:575px){
+    .modal h4{
+    font-size: 15px;
+}
+}
+.modal .modal-footer svg{
+    font-size: large;
+    color: black;
+}
+a{
+    text-decoration: none;
+}
 /* End main Style */
 
 /* Start Navbar */
@@ -52,6 +65,17 @@ nav.navbar{
 }
 .slider img{
     max-height:300px ;
+}
+@media(max-width:991px){
+    .slider img{
+        max-height: 300px;
+    }
+}
+
+@media(max-width:768px){
+    .slider img{
+        max-height: 150px;
+    }
 }
 @keyframes slidBg{
     0%{
@@ -109,8 +133,13 @@ nav.navbar{
 .services ul li:hover{
     color: rgba(0, 0, 0, .5);
 }
-.services .houses div.center:not(:first-of-type){
-    display:none ;
+@media(min-width:767px){.services .card{
+    height: 330px;
+    overflow: hidden;
+}
+}
+.services .card .card-footer span{
+    font-size: 12px;
 }
 
 /* End Services */
