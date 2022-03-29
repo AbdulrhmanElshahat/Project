@@ -61,7 +61,7 @@ close.click(function(){
     popup.hide(300 , _=>$('body').css('overflow' , 'auto'))
 })
 
-$.getJSON('../main.json', function(data){
+$.getJSON('main.json', function(data){
     let info = data,
         centersBtns,
         centersBtnsParent = $('.services .navbar-nav'),
