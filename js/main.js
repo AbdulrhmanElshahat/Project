@@ -4,13 +4,16 @@ let navItems = $('#nav .nav-item')
 let slider = $("#slider");
 let popup = $('.popup');
 let close = $('.close');
-let sections = [$('.services') , $('.vedio') , $('.gallary')]
+let sections = [$('.vedio') , $('.services') ,$('.donations'), $('.gallary')]
 let centerDescription = $('.modal-body p');
 let centerTitle = $('.modal-title');
 let centerAddress = $('.modal-footer .address span');
 let centerPhone = $('.modal-footer .phone-num span');
 let centerBankAcount = $('.modal-footer .acount-num span');
 let centerSocial = $('.modal-footer .social a');
+let windowTop;
+let sectionsOfsetTop;
+let sectionHeight;
 // Navbar
 
 navItems.click(function(){
@@ -19,18 +22,22 @@ navItems.click(function(){
 })
 changeNaveStyle(0)
 $(window).on("scroll resize" , _=> changeNaveStyle())
-// sections.forEach(ele =>{
-//     $(window).scroll(function(){
-//         if( $(window).scrollTop() >= ele.offset().top ){
-//             // navItems.children('a').removeClass('active')
-//             getActiveLink = sections.filter(section => section.offset().top >= $(window).scrollTop())
-
-//                 // console.log(navItems.children(a).prop('href' , $(ele).prop('id')))
-//                 // console.log(getActiveLink)
+sections.forEach(ele => {
+    
+    $(window).scroll(function(){
+        let scrolling = $(window).scrollTop()
+        sectionsOfsetTop = ele.offset().top;
+        sectionHeight = ele.outerHeight();
+        allHeight = sectionsOfsetTop + sectionHeight;
+        if( scrolling >= sectionsOfsetTop && scrolling <= allHeight){
+            let x = sections.filter(e => e.offset().top <= scrolling && (e.outerHeight() + e.offset().top)>= scrolling)
+            navItems.children('a').removeClass('active')
+           navItems.children(`[href = "#${$(x)[0].prop('id')}"]`).addClass('active')
+           
             
-//         }
-//     })
-// })
+        }
+    })
+})
 function changeNaveStyle(){
     if($(this).scrollTop() > 0 || $(this).width() <= 575){ shrink()}else{grow()}
 }
