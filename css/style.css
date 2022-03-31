@@ -55,7 +55,7 @@ nav.navbar{
     height: 100vh;
     animation: slidBg 9s linear infinite 0s;
     animation-timing-function: ease-in-out;
-    background-image: url('../img/yannis-h-uaPaEM7MiQQ-unsplash.jpg');
+    background-image: url('../img/slider/IMG_1.WEBP');
 }
 .slider h2{
     font-family: 'Reem Kufi', sans-serif;
@@ -79,19 +79,19 @@ nav.navbar{
 }
 @keyframes slidBg{
     0%{
-    background-image: url('../img/yannis-h-uaPaEM7MiQQ-unsplash.jpg');
+    background-image: url('../img/slider/IMG_1.WEBP');
     }
     25%{
-        background-image: url('../img/header-3.jpg');
+        background-image: url('../img/slider/IMG_2.WEBP');
     }
     50%{
-        background-image: url('../img/header-4.jpg');
+        background-image: url('../img/slider/IMG_3.WEBP');
     }
     75%{
-        background-image: url('../img/header-5.jpg');
+        background-image: url('../img/slider/IMG_4.WEBP');
     }
     100%{
-        background-image: url('../img/header-6.jpg');
+        background-image: url('../img/slider/IMG_6.WEBP');
     }
 }
 .slider .container{

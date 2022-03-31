@@ -1,10 +1,12 @@
 let navBar = $('#nav');
 let overLay = $(".overLay");
 let navItems = $('#nav .nav-item')
+let navLinks = navItems.children('.nav-link')
+let activeLink
 let slider = $("#slider");
 let popup = $('.popup');
 let close = $('.close');
-let sections = [$('.vedio') , $('.services') ,$('.donations'), $('.gallary')]
+let sections = [$(".slider"), $('.vedio') , $('.services') ,$('.donations'), $('.gallary')]
 let centerDescription = $('.modal-body p');
 let centerTitle = $('.modal-title');
 let centerAddress = $('.modal-footer .address span');
@@ -17,24 +19,22 @@ let sectionHeight;
 // Navbar
 
 navItems.click(function(){
-    navItems.children('.nav-link').removeClass('active')
-    $(this).children('.nav-link').addClass('active')
+     activeLink =  $(this).children('.nav-link');
+    toggleClass(navLinks , 'active' , activeLink);
 })
 changeNaveStyle(0)
 $(window).on("scroll resize" , _=> changeNaveStyle())
 sections.forEach(ele => {
     
     $(window).scroll(function(){
-        let scrolling = $(window).scrollTop()
+        let scrolling = $(window).scrollTop() + 100;
         sectionsOfsetTop = ele.offset().top;
         sectionHeight = ele.outerHeight();
         allHeight = sectionsOfsetTop + sectionHeight;
         if( scrolling >= sectionsOfsetTop && scrolling <= allHeight){
-            let x = sections.filter(e => e.offset().top <= scrolling && (e.outerHeight() + e.offset().top)>= scrolling)
-            navItems.children('a').removeClass('active')
-           navItems.children(`[href = "#${$(x)[0].prop('id')}"]`).addClass('active')
-           
-            
+            let visiblePart = sections.filter(e => e.offset().top <= scrolling && (e.outerHeight() + e.offset().top)>= scrolling)
+            activeLink =  navItems.children(`[href = "#${$(visiblePart)[0].prop('id')}"]`)
+            toggleClass(navLinks , 'active' , activeLink)
         }
     })
 })
