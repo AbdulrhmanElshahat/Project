@@ -13,6 +13,7 @@ let centerAddress = $('.modal-footer .address span');
 let centerPhone = $('.modal-footer .phone-num span');
 let centerBankAcount = $('.modal-footer .acount-num span');
 let centerSocial = $('.modal-footer .social a');
+let modalFooter = $(".modal-footer .contact");
 let windowTop;
 let sectionsOfsetTop;
 let sectionHeight;
@@ -104,34 +105,27 @@ $.getJSON('main.json', function(data){
             for(let houseCenter in housesOfCenter){
                 houseDescription = housesOfCenter[houseCenter].description;
                 descriptionsArr.push(houseDescription)
-                cardAmountDescription = houseDescription.split(" " , 14);
+                cardAmountDescription = houseDescription.split("." , 1);
                 cardDescription = cardAmountDescription.join(" ");
                 mainTitle = housesOfCenter[houseCenter].title,
                 mainAddress = housesOfCenter[houseCenter].contact.address,
                 mainPhone = housesOfCenter[houseCenter].contact.phonenum,
                 mainSocial = housesOfCenter[houseCenter].contact.facebook,
                 mainBank = housesOfCenter[houseCenter].contact.acountnum;
-                houseContent = creatCard(mainTitle, cardDescription , mainAddress , mainPhone , mainBank , mainSocial)
+                bankName = housesOfCenter[houseCenter].contact.bankName;
+                houseContent = creatCard(mainTitle, cardDescription , mainAddress , mainPhone , mainBank , mainSocial , bankName)
                 row.append(houseContent)
             }
             houseContent = $(row.children())
             fadeEle(houseContent)
         }
         let redMore = $('.red-more')
-        let r = Array.from(redMore)
+        let redMoreArr = Array.from(redMore)
         redMore.click(function(){
-            let card = $(this).parents('.card'), 
-                cardTitle = getText(card , ".card-header"),
-                phonNum = getText(card , '.phone-num'),
-                bankAcount = getText(card , '.acount-num'),
-                address = getText(card , '.address'),
-                facebook = card.find('.social').children('a').prop('href');
-                fillEle(centerTitle ,cardTitle )
-                fillEle(centerDescription , descriptionsArr[r.indexOf(this)])
-                fillEle(centerAddress , address)
-                fillEle(centerBankAcount , bankAcount)
-                fillEle(centerPhone , phonNum)
-                centerSocial.prop('href',facebook)
+            let card = $(this).parents('.card');
+                fillEle(centerTitle ,card.children(".card-header").text())
+                fillEle(centerDescription , descriptionsArr[redMoreArr.indexOf(this)])
+                fillEle(modalFooter, card.children(".card-footer").html())
         })
     })
     
@@ -149,7 +143,7 @@ function toggleClass(ele , className , curentEle){
     $(curentEle).addClass(className)
 }
 
-function creatCard(title , description , address , phone , bank , social){
+function creatCard(title , description , address , phone , bank , social , bankName){
     return `
     <div class="col-md-6 col-lg-4 mb-4">
     <div class="card">
@@ -167,8 +161,8 @@ function creatCard(title , description , address , phone , bank , social){
         <div class="phone-num pb-2">
         <i class="fa-solid fa-mobile-screen-button"></i> <span class="text-black-50">${phone}</span> 
         </div>
-        <div class="acount-num pb-2">
-        <i class="fa-solid fa-mobile-screen-button"></i> <span class="text-black-50 num">${bank}</span> 
+        <div class="acount-num pb-2" title ="${bankName}">
+        <i class="fa-solid fa-money-check"></i> <span class="text-black-50 num">${bank}</span> 
         </div>
         <div class="address pb-2">
         <i class="fa-solid fa-location-dot"></i> <span class="text-black-50">${address}</span>
