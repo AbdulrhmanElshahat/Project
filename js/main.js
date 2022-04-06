@@ -25,20 +25,21 @@ navItems.click(function(){
 })
 changeNaveStyle(0)
 $(window).on("scroll resize" , _=> changeNaveStyle())
-sections.forEach(ele => {
+//Scrollspy with out bootstrab
+// sections.forEach(ele => {
     
-    $(window).scroll(function(){
-        let scrolling = $(window).scrollTop() + 100;
-        sectionsOfsetTop = ele.offset().top;
-        sectionHeight = ele.outerHeight();
-        allHeight = sectionsOfsetTop + sectionHeight;
-        if( scrolling >= sectionsOfsetTop && scrolling <= allHeight){
-            let visiblePart = sections.filter(e => e.offset().top <= scrolling && (e.outerHeight() + e.offset().top)>= scrolling)
-            activeLink =  navItems.children(`[href = "#${$(visiblePart)[0].prop('id')}"]`)
-            toggleClass(navLinks , 'active' , activeLink)
-        }
-    })
-})
+//     $(window).scroll(function(){
+//         let scrolling = $(window).scrollTop() + 100;
+//         sectionsOfsetTop = ele.offset().top;
+//         sectionHeight = ele.outerHeight();
+//         allHeight = sectionsOfsetTop + sectionHeight;
+//         if( scrolling >= sectionsOfsetTop && scrolling <= allHeight){
+//             let visiblePart = sections.filter(e => e.offset().top <= scrolling && (e.outerHeight() + e.offset().top)>= scrolling)
+//             activeLink =  navItems.children(`[href = "#${$(visiblePart)[0].prop('id')}"]`)
+//             toggleClass(navLinks , 'active' , activeLink)
+//         }
+//     })
+// })
 function changeNaveStyle(){
     if($(this).scrollTop() > 0 || $(this).width() <= 575){ shrink()}else{grow()}
 }

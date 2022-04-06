@@ -239,12 +239,6 @@ nav.navbar{
         height: 300px;
     }
 }
-@media(min-width:768px){
-    .donations{
-        min-height: 90vh;
-    }
-}
-
 .donations-last-item{
     visibility: hidden;
 }
