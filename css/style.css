@@ -20,7 +20,7 @@ body{
     }
 }
 .smt{ /*section margin top*/
-    margin-top: 6rem;
+    padding-top: 5rem;
 }
 
 @media(max-width:575px){
@@ -46,6 +46,9 @@ nav.navbar{
 .navbar .navbar-brand img{
     height: 62px;
 } 
+.navbar .navbar-nav .nav-link.active{
+    color: #ffcc00;
+}
 /* End Navbar */
 /* Start Slider */
 .slider{
@@ -56,6 +59,7 @@ nav.navbar{
     animation: slidBg 9s linear infinite 0s;
     animation-timing-function: ease-in-out;
     background-image: url('../img/slider/IMG_1.WEBP');
+    color: #ffcc00;
 }
 .slider h2{
     font-family: 'Reem Kufi', sans-serif;
@@ -100,6 +104,7 @@ nav.navbar{
 /* End Slider */
 
 /* Start Services */
+
 .services ul{
     color: black;
     padding: 0;
@@ -112,20 +117,18 @@ nav.navbar{
 }
 .services ul li{
     transition: .3s;
-    background-color: var(--main-color);
     padding: 5px 15px;
     color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
     font-weight: 600;
 }
 .services ul li.active{
-    background-color: #0b5ed7 ;
-    color: #fff;
+    color: #ffcc00;
 }
 
 .services ul li:hover{
     background-color: #0b5ed7;
-    color: #fff !important;
+    color: #ffcc00 !important;
 }
 /* .services ul li:not(li:last-of-type){
     margin-left: 10px;
@@ -235,4 +238,13 @@ nav.navbar{
         width: 95%;
         height: 300px;
     }
+}
+@media(min-width:768px){
+    .donations{
+        min-height: 90vh;
+    }
+}
+
+.donations-last-item{
+    visibility: hidden;
 }

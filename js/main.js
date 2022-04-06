@@ -6,7 +6,7 @@ let activeLink
 let slider = $("#slider");
 let popup = $('.popup');
 let close = $('.close');
-let sections = [$(".slider"), $('.vedio') , $('.services') ,$('.donations'), $('.gallary')]
+let sections = [$(".slider"), $('.vedio') , $('.services') ,$('.donations')]
 let centerDescription = $('.modal-body p');
 let centerTitle = $('.modal-title');
 let centerAddress = $('.modal-footer .address span');
@@ -175,7 +175,7 @@ function creatCard(title , description , address , phone , bank , social , bankN
 </div>`
 }
 function creatNavItem(text){
-    return `<li class="nav-item rounded mb-3 mb-lg-0 ms-lg-3" data-target="#talkha">${text}</li>`
+    return `<li class="nav-item rounded mb-3 mb-lg-0 ms-lg-3 bg-dark" data-target="#talkha">${text}</li>`
 }
 function fadeEle(ele){
     ele.css( "display", 'none')
