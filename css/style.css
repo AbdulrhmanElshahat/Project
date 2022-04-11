@@ -56,9 +56,9 @@ nav.navbar{
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
-    animation: slidBg 9s linear infinite 0s;
+    animation: slidBg 10s linear infinite 0s;
     animation-timing-function: ease-in-out;
-    background-image: url('../img/slider/IMG_1.WEBP');
+    /* background-image: url('../img/slider/IMG_1.WEBP'); */
     color: #ffcc00;
 }
 .slider h2{
@@ -85,18 +85,22 @@ nav.navbar{
     0%{
     background-image: url('../img/slider/IMG_1.WEBP');
     }
-    25%{
+    20%{
         background-image: url('../img/slider/IMG_2.WEBP');
     }
-    50%{
+    40%{
         background-image: url('../img/slider/IMG_3.WEBP');
     }
-    75%{
+    60%{
         background-image: url('../img/slider/IMG_4.WEBP');
+    }
+    80%{
+        background-image: url('../img/slider/IMG_5.WEBP');
     }
     100%{
         background-image: url('../img/slider/IMG_6.WEBP');
     }
+   
 }
 .slider .container{
     z-index: 1;
@@ -186,7 +190,7 @@ nav.navbar{
 .gallary .popup{
     position: absolute;
     left: 50%;
-    top: 0;
+    top: -55px;
     transform: translate(-50% , 0%);
     width: 800px;
     z-index: 100;
@@ -194,6 +198,7 @@ nav.navbar{
 }
 @media(max-width:992px){
     .gallary .popup{
+        top: 0;
         width: 550px !important;
     }
 }
@@ -219,22 +224,23 @@ nav.navbar{
 }
 
 /* End gallary */
-.vedio iframe{
+.vedio video{
     width: 800px;
     height: 500px;
+    background-color: black;
 }
 @media(max-width:991px){
-    .vedio iframe{
+    .vedio video{
         width: 600px;
     }
 }
 @media(max-width:768px){
-    .vedio iframe{
+    .vedio video{
         width: 500px;
     }
 }
 @media(max-width:575px){
-    .vedio iframe{
+    .vedio video{
         width: 95%;
         height: 300px;
     }
