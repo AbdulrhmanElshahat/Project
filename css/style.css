@@ -2,7 +2,7 @@ body{
     min-height: 2000px;
 }
 :root{
-    --main-color:#0d6efd;
+    --main-color:#ffcc00
 }
 @media(max-width:767px){
     body{
@@ -47,7 +47,7 @@ nav.navbar{
     height: 62px;
 } 
 .navbar .navbar-nav .nav-link.active{
-    color: #ffcc00;
+    color: var(--main-color);
 }
 /* End Navbar */
 /* Start Slider */
@@ -59,7 +59,7 @@ nav.navbar{
     animation: slidBg 10s linear infinite 0s;
     animation-timing-function: ease-in-out;
     /* background-image: url('../img/slider/IMG_1.WEBP'); */
-    color: #ffcc00;
+    color: var(--main-color);
 }
 .slider h2{
     font-family: 'Reem Kufi', sans-serif;
@@ -127,12 +127,11 @@ nav.navbar{
     font-weight: 600;
 }
 .services ul li.active{
-    color: #ffcc00;
+    color: var(--main-color);
 }
 
 .services ul li:hover{
-    background-color: #0b5ed7;
-    color: #ffcc00 !important;
+    color: var(--main-color) !important;
 }
 /* .services ul li:not(li:last-of-type){
     margin-left: 10px;
@@ -160,7 +159,7 @@ nav.navbar{
     .gallary .box::before{
         content: '+';
         text-align: center;
-        color: #ffcc00;
+        color: var(--main-color);
         font-size: 100px;
         display: flex;
         position: absolute;
