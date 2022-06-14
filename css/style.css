@@ -229,17 +229,17 @@ nav.navbar{
     background-color: black;
 }
 @media(max-width:991px){
-    .vedio video{
+    .vedio iframe{
         width: 600px;
     }
 }
 @media(max-width:768px){
-    .vedio video{
+    .vedio iframe{
         width: 500px;
     }
 }
 @media(max-width:575px){
-    .vedio video{
+    .vedio iframe{
         width: 95%;
         height: 300px;
     }
