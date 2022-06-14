@@ -223,7 +223,7 @@ nav.navbar{
 }
 
 /* End gallary */
-.vedio video{
+.vedio iframe{
     width: 800px;
     height: 500px;
     background-color: black;
